@@ -1,0 +1,64 @@
+
+<form #sellerForm="ngForm" (ngSubmit)="onSubmit()" >
+    <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
+         <label>Flight Number</label>
+         <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
+              <input type="text" class="col-12" [(ngModel)]="sellerModel.flightNumber" name="passengerName" #flightNumber="ngModel">
+              <span [hidden]="flightNumber.valid">
+                   Error
+              </span>
+         </div>
+    </div>
+    <div>
+		<ion-label stacked>Source</ion-label>
+     	<ion-item>
+          <ion-input  placeholder="Enter Source" [(ngModel)]="sellerModel.source" name="source" #source="ngModel"></ion-input>
+        </ion-item>
+         <!-- <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
+              <input type="text" class="col-12" [(ngModel)]="sellerModel.source" name="source" #source="ngModel">
+              <span [hidden]="source.valid">
+                   Error
+              </span>
+         </div> -->
+    </div>
+    <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
+         <label>Destination</label>
+         <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
+              <input type="text" class="col-12" [(ngModel)]="sellerModel.destination" name="destination" #destination="ngModel">
+              <span [hidden]="destination.valid">
+                   Error
+              </span>
+         </div>
+    </div>
+    <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
+         <label>Time</label>
+         <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
+              <input type="time" class="col-12" [(ngModel)]="sellerModel.time" name="time" #time="ngModel">
+              <span [hidden]="time.valid">
+                   Error
+              </span>
+         </div>
+    </div>
+    <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
+         <label>Date</label>
+         <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
+               <!-- <ion-datetime [(ngModel)]="sellerModel.date" name="date" #date="ngModel"></ion-datetime> -->
+              <input type="date" class="col-12" [(ngModel)]="sellerModel.date" name="date" #date="ngModel">
+              <span [hidden]="date.valid">
+                   Error
+              </span>
+         </div>
+    </div>
+    <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
+         <label>Available Space</label>
+         <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
+              <input type="text" class="col-12" [(ngModel)]="sellerModel.availableSpace" name="availableSpace" #availableSpace="ngModel">
+              <span [hidden]="availableSpace.valid">
+                   Error
+              </span>
+         </div>
+    </div>
+    <ion-button type="ngSubmit"> Button here</ion-button>
+ </form>
+
+ <app-list-display [tripList]="tripList"></app-list-display>

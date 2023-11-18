@@ -1,0 +1,10 @@
+{
+  "defaultProject": "ride-share-app",
+  "projects": {
+    "ride-share-app": {
+      "name": "ride-share-app",
+      "integrations": {},
+      "type": "angular"
+    }
+  }
+}

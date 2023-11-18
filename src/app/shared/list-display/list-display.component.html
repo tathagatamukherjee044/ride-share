@@ -1,0 +1,9 @@
+<p>list-display works!</p>
+<ion-content >
+    <div *ngIf="tripList.length>0">
+        <div *ngFor="let trip of tripList">
+            <app-card-display [trip]="trip"></app-card-display>
+        </div>
+    </div>
+    <ion-button (click)="showlist()">Show</ion-button> 
+</ion-content>

@@ -1,0 +1,8 @@
+<p>buyer-list works!</p>
+<button (click)="showlist()">click</button>
+<div *ngIf="tripList.length>0">
+    <div *ngFor="let trip of tripList">
+        <app-buyer-item [trip]="trip"></app-buyer-item>
+    </div>
+</div>
+

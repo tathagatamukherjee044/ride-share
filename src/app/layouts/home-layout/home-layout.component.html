@@ -1,0 +1,88 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" [opened]="sideToggle">
+    Side Content
+    <div>
+      <a routerLink="/create" routerLinkActive="active-link">CREate</a>
+    </div>
+    <div>
+      <a routerLink="/search" routerLinkActive="active-link">Searc</a>
+    </div>
+    
+    <button (click)="goTo('/create')">Create</button>
+    <button (click)="goTo('/search')">Search</button>
+  </mat-drawer>
+  <mat-drawer-content>
+    <button (click)="toogleNav()" >toggle</button>
+    <div class="container">
+      <div class="row">
+       
+          <div class="col-6 col-sm-6 col-md-8 col-lg-10" id="main">
+                <ion-title>Main View</ion-title>
+               
+              <router-outlet></router-outlet>
+      </div>
+    </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+  <!-- <ion-menu contentId="main">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-button type="button" (click)="goTo('/create')">Create</ion-button>
+        <ion-button type="button" (click)="goTo('/search')">Search</ion-button>
+    </ion-content>
+  </ion-menu> -->
+
+  <!-- <div class="w-25 p-3" id="main">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Main View</ion-title>
+        <div ngbDropdown class="d-inline-block">
+          <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+            Toggle dropdown
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem>Action - 1</button>
+            <button ngbDropdownItem>Another Action</button>
+            <button ngbDropdownItem>Something else is here</button>
+          </div>
+        </div>
+      </ion-toolbar>
+    </ion-header>
+
+      <router-outlet></router-outlet>
+
+  </div> -->
+
+
+<!-- <ion-split-pane>
+<ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu Content</ion-title>
+      </ion-toolbar>
+    </ion-header>
+        <ion-button type="button" (click)="goTo('/create')">Create</ion-button>
+        <ion-button type="button" (click)="goTo('/search')">Search</ion-button>
+  </ion-menu>
+</ion-split-pane> -->
+  <!-- <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content scroll="true">
+        <ion-router-outlet main></ion-router-outlet>
+    </ion-content>
+  </div> -->
+
