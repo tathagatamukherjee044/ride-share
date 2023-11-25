@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
+import { config } from '../_store/config';
+import { getLocaleFirstDayOfWeek } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +24,30 @@ export class AuthService {
 
   getToken(){
     return localStorage.getItem('token')
+  }
+
+  getGoogleOAuthURL() {
+    const rootUrl = "https://accounts.google.com/o/oauth2/v2/auth";
+  
+    const options = {
+      redirect_uri: config.googleOauthRedirectUrl as string,
+      client_id: config.googleClientId as string,
+      access_type: "offline",
+      response_type: "code",
+      prompt: "consent",
+      scope: [
+        "https://www.googleapis.com/auth/userinfo.profile",
+        "https://www.googleapis.com/auth/userinfo.email",
+      ].join(" "),
+    };
+  
+    
+    const qs = new URLSearchParams(options);
+
+    console.log(`${rootUrl}?${qs.toString()}`);
+    
+    window.location.href = `${rootUrl}?${qs.toString()}`
+    // return `${rootUrl}?${qs.toString()}`;
+    
   }
 }
