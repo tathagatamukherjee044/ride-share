@@ -3,13 +3,17 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { config } from '../_store/config';
 import { getLocaleFirstDayOfWeek } from '@angular/common';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http : HttpClient) { }
+  constructor(
+    private http : HttpClient,
+    private storageService : StorageService
+    ) { }
 
   authenticateUser(userModel: any): Observable<any> {
     return this.http.post('http://localhost:8080/auth/login',userModel).pipe(map(res =>{
@@ -23,7 +27,12 @@ export class AuthService {
   }
 
   getToken(){
-    return localStorage.getItem('token')
+    return this.storageService.getStorage('token')
+  }
+
+  setUser(userData : any){
+    this.storageService.setStorage('token',userData.token)
+    this.storageService.setStorage('user',userData.user)
   }
 
   getGoogleOAuthURL() {

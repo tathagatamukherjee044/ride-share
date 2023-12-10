@@ -1,8 +1,7 @@
-<ion-content>
+
 <p>trips works!</p>
-  <ion-select aria-label="Fruit" interface="popover" placeholder="Select fruit" (ionChange)="handleChange($event)">
+  <ion-select aria-label="Select Trip Type" interface="popover" placeholder="creator/consumer" (ionChange)="handleChange($event)">
     <ion-select-option value="creator">Cretor</ion-select-option>
     <ion-select-option value="consumer">Consumer</ion-select-option>
   </ion-select>
-  <app-trip-list [tripList]="tripList"></app-trip-list>
-</ion-content>
+  <app-list-display [tripList]="tripList"></app-list-display>

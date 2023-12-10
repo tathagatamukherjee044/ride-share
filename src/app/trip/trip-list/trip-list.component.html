@@ -1,9 +1,7 @@
 <p>trip list works</p>
-<ion-content >
 <div *ngIf="tripList.length>0">
     <div *ngFor="let trip of tripList">
         <app-trip-item [trip]="trip"></app-trip-item>
     </div>
 </div>
 <ion-button (click)="showlist()">Show</ion-button>
-</ion-content>

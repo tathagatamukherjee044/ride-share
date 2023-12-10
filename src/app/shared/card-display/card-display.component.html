@@ -1,13 +1,18 @@
 <p>card-display works!</p>
 <ion-card>
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-subtitle>{{trip.source}} <ion-icon name="caret-forward-outline"></ion-icon> {{trip.destination}}</ion-card-subtitle>
+      
     </ion-card-header>
   
     <ion-card-content>
-        <ion-label>Name : {{trip.creatorName}}</ion-label>
+        <!-- <ion-label>Name : {{trip?.creator[0]?.name}}</ion-label><br> -->
         <ion-label>Price : {{trip.price}}</ion-label>
+        <ion-label *ngFor="let request of trip.consumerRequests">
+          hello
+          {{request.consumerName}}
+          <ion-button (click)="approveTrip(request.consumerId)">Request</ion-button>
+        </ion-label>
     </ion-card-content>
     <button (click)="setTripView()" class="btn">View</button>
     <ion-button (click)="requestTrip()">Request</ion-button>

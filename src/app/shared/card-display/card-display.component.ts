@@ -30,4 +30,14 @@ export class CardDisplayComponent {
       this.nav.navigateRoot("/search")
     })
   }
+
+  approveTrip(userId : string){
+    const request = {
+      tripId : this.trip._id,
+      userId
+    }
+    this.tripService.approveTrip(request).subscribe(data =>{
+      console.log(data);
+    })
+  }
 }

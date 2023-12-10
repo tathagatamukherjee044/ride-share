@@ -19,10 +19,12 @@ export class TripSearchComponent {
     this.tripService.getTripsForBuyer(this.sellerModel).subscribe(data =>{
       console.log(data);
       
-      data.forEach((element : any) => {
+      data.data.forEach((element : any) => {
         element['userActions'] = 'request'
       });
-      this.tripList=data;
+      this.tripList=data.data;
+      console.log(this.tripList);
+      
     })
     console.log("submitted")
   }

@@ -47,6 +47,12 @@ export class TripService {
     });
   }
 
+  approveTrip(tripRequest: any){
+    return this.http.post('http://localhost:8080/trip/approve',tripRequest).pipe(res => {
+      return res;
+    });
+  }
+
   getCreatorTrips(){
     return this.http.post('http://localhost:8080/trip/getCreator',{}).pipe(res => {
       return res;

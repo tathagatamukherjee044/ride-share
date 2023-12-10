@@ -13,6 +13,8 @@ import { HTTPInterceptor } from './http.interceptor';
 import { UserModule } from './user/user.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -26,10 +28,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     NgbModule,
     BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule
   ],
-  // providers: [{ 
-  //   provide: HTTP_INTERCEPTORS, useClass: HTTPInterceptor, multi:true
-  // },],
+  exports:[ MatIconModule],
+  providers: [{ 
+    provide: HTTP_INTERCEPTORS, useClass: HTTPInterceptor, multi:true
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

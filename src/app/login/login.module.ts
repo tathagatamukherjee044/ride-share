@@ -5,6 +5,7 @@ import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule, Routes } from '@angular/router';
+import { OauthComponent } from './oauth/oauth.component';
 const routes : Routes = [
   {
     path:'signup',
@@ -14,12 +15,17 @@ const routes : Routes = [
     path:'login',
     component: LoginComponent
   },
+  {
+    path:'oauth',
+    component: OauthComponent
+  },
 ]
 
 @NgModule({
   declarations: [
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    OauthComponent
   ],
   imports: [
     CommonModule,

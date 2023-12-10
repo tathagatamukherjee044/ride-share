@@ -5,11 +5,16 @@ import { TripsComponent } from './trips/trips.component';
 import { TripModule } from '../trip/trip.module';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { SharedModule } from '../shared/shared.module';
 
 const routes : Routes = [
   {
     path:'trips',
     component: TripsComponent
+  },
+  {
+    path:'me',
+    component: ProfileComponent
   }
 ]
 
@@ -22,7 +27,8 @@ const routes : Routes = [
     CommonModule,
     IonicModule,
     RouterModule.forChild(routes),
-    TripModule
+    TripModule,
+    SharedModule
   ]
 })
 export class UserModule { }

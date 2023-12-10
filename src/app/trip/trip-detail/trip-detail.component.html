@@ -3,8 +3,8 @@
     <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
          <label>Flight Number</label>
          <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
-              <input type="text" class="col-12" [(ngModel)]="tripModel.flightNumber" name="passengerName" #flightNumber="ngModel">
-              <span [hidden]="flightNumber.valid">
+              <input type="text" class="col-12" [(ngModel)]="tripModel.vehicleNumber" name="passengerName" #vehicleNumber="ngModel" [readOnly]="true">
+              <span [hidden]="vehicleNumber.valid">
                    Error
               </span>
          </div>
@@ -12,7 +12,7 @@
     <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
          <label>Source</label>
          <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
-              <input type="text" class="col-12" [(ngModel)]="tripModel.source" name="source" #source="ngModel">
+              <input type="text" class="col-12" [(ngModel)]="tripModel.source" name="source" #source="ngModel" [readOnly]="true">
               <span [hidden]="source.valid">
                    Error
               </span>
@@ -21,7 +21,7 @@
     <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
          <label>Destination</label>
          <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
-              <input type="text" class="col-12" [(ngModel)]="tripModel.destination" name="destination" #destination="ngModel">
+              <input type="text" class="col-12" [(ngModel)]="tripModel.destination" name="destination" #destination="ngModel" [readOnly]="true">
               <span [hidden]="destination.valid">
                    Error
               </span>
@@ -30,7 +30,7 @@
     <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
          <label>Time</label>
          <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
-              <input type="time" class="col-12" [(ngModel)]="tripModel.time" name="time" #time="ngModel">
+              <input type="time" class="col-12" [(ngModel)]="tripModel.time" name="time" #time="ngModel" [readOnly]="true">
               <span [hidden]="time.valid">
                    Error
               </span>
@@ -39,7 +39,7 @@
     <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
          <label>Date</label>
          <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
-              <input type="date" class="col-12" [(ngModel)]="tripModel.date" name="date" #date="ngModel">
+              <input type="date" class="col-12" [(ngModel)]="tripModel.date" name="date" #date="ngModel" [readOnly]="true">
               <span [hidden]="date.valid">
                    Error
               </span>
@@ -48,7 +48,7 @@
     <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
          <label>Available Space</label>
          <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
-              <input type="text" class="col-12" [(ngModel)]="tripModel.availableSpace" name="availableSpace" #availableSpace="ngModel">
+              <input type="text" class="col-12" [(ngModel)]="tripModel.availableSpace" name="availableSpace" #availableSpace="ngModel" [readOnly]="true">
               <span [hidden]="availableSpace.valid">
                    Error
               </span>
@@ -57,7 +57,7 @@
     <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
      <label>Price(per kilo)</label>
      <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
-          <input type="text" class="col-12" [(ngModel)]="tripModel.price" name="price" #price="ngModel">
+          <input type="text" class="col-12" [(ngModel)]="tripModel.price" name="price" #price="ngModel" [readOnly]="true">
           <span [hidden]="price.valid">
                Error
           </span>

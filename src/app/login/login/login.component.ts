@@ -14,7 +14,7 @@ export class LoginComponent {
 
   constructor(
     private authService : AuthService,
-    private nav :NavController
+    private nav :NavController,
     ){}
   onSubmit(){
     console.log(this.user);
@@ -30,22 +30,15 @@ export class LoginComponent {
 
     });
   }
+
   goTo(page: string | any[] | UrlTree){
     this.nav.navigateRoot(page)
   }
 
   loginWithGoogle(){
-    this.authService.getGoogleOAuthURL().subscribe(res =>{
-      console.log(res);
-      if(res.success == true){
-        localStorage.setItem('token',res.token)
-        this.nav.navigateRoot("/create")
-      }else {
-        alert("wrong password") 
-      }
-      
-
-    });
+    this.authService.getGoogleOAuthURL()
   }
+
+  
   
 }

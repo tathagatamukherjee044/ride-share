@@ -1,22 +1,39 @@
+
 <mat-drawer-container class="example-container">
   <mat-drawer mode="side" [opened]="sideToggle">
     Side Content
     <div>
-      <a routerLink="/create" routerLinkActive="active-link">CREate</a>
+      <a routerLink="/create" routerLinkActive="active-link">Create</a>
     </div>
     <div>
-      <a routerLink="/search" routerLinkActive="active-link">Searc</a>
+      <a routerLink="/search" routerLinkActive="active-link">Search</a>
+    </div>
+    <div>
+      <button (click)="logout()">LOGOUT</button>
     </div>
     
     <button (click)="goTo('/create')">Create</button>
     <button (click)="goTo('/search')">Search</button>
   </mat-drawer>
   <mat-drawer-content>
-    <button (click)="toogleNav()" >toggle</button>
+    <div>
+      <!-- <a href="javascript:void(0);" (click)="toogleNav()" > -->
+        <!-- <i class="ri-menu-line" (click)="toogleNav()" ></i> -->
+        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+      <!-- </a> -->
+      <a routerLink="/user/me">
+        <p class="text-end">{{user.name}}</p>
+      </a>
+      
+    </div>
+    
     <div class="container">
       <div class="row">
        
           <div class="col-6 col-sm-6 col-md-8 col-lg-10" id="main">
+            
                 <ion-title>Main View</ion-title>
                
               <router-outlet></router-outlet>

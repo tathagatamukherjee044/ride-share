@@ -1,26 +1,23 @@
 
 <form #sellerForm="ngForm" (ngSubmit)="onSubmit()" >
     <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
-         <label>Flight Number</label>
+         <label>Vehicle Number</label>
          <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
-              <input type="text" class="col-12" [(ngModel)]="sellerModel.flightNumber" name="passengerName" #flightNumber="ngModel">
-              <span [hidden]="flightNumber.valid">
+              <input type="text" class="col-12" [(ngModel)]="sellerModel.vehicleNumber" name="vehicleNumber" #vehicleNumber="ngModel">
+              <span [hidden]="vehicleNumber.valid">
                    Error
               </span>
          </div>
     </div>
-    <div>
-		<ion-label stacked>Source</ion-label>
-     	<ion-item>
-          <ion-input  placeholder="Enter Source" [(ngModel)]="sellerModel.source" name="source" #source="ngModel"></ion-input>
-        </ion-item>
-         <!-- <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
-              <input type="text" class="col-12" [(ngModel)]="sellerModel.source" name="source" #source="ngModel">
-              <span [hidden]="source.valid">
-                   Error
-              </span>
-         </div> -->
-    </div>
+    <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
+          <label>Source</label>
+          <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">
+               <input type="text" placeholder="Enter Source" [(ngModel)]="sellerModel.source" name="source" #source="ngModel">
+               <span [hidden]="vehicleNumber.valid">
+                    Error
+               </span>
+          </div>
+     </div>
     <div class="col-12 col-lg-6 col-xl-6 mb-2 d-flex">
          <label>Destination</label>
          <div class="col-8 col-lg-8 col-xl-8 mb-2 d-flex">

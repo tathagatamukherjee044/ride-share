@@ -20,6 +20,8 @@ export class HTTPInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const jwt = this.authService.getToken()
+    console.log(jwt);
+    
     return next.handle(request.clone({ setHeaders: { token: `${jwt}`  }
     })).pipe(
       tap({

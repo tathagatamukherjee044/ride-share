@@ -23,8 +23,7 @@ export class TripsComponent implements OnInit{
       this.tripService.getCreatorTrips().subscribe(data =>{
         console.log(data);
         this.creatorTripList=data
-        console.log(this.creatorTripList);
-        
+        console.log(this.creatorTripList); 
       })
     })
   }
